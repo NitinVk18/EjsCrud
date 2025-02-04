@@ -1,0 +1,12 @@
+<h1>Edit Details</h1>
+<form action="/updateData" method="post">
+<% b.forEach(function(n){ %>
+    
+    Name <input type="text" name="n1" value="<%= n.name  %>"><br><br>
+    Address <input type="text" name="n2" value="<%= n.address  %>"><br><br>
+    Phone <input type="number" name="n3" value="<%= n.phone  %>"><br><br>
+    Designation <input type="text" name="n4" value="<%= n.designation  %>"><br><br>
+    <input type="hidden" name="myid" value="<%= n.id  %>"> 
+    <input type="submit" value="update">
+ <% }); %>
+</form>

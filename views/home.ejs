@@ -1,0 +1,54 @@
+<h1>Customer Details</h1>
+
+<form action="/addingData" method="post">
+    Customer Id <input type="number" name="id"><br><br>
+    Name <input type="text" name="name"><br><br>
+    Address <input type="text" name="address"><br><br>
+    Phone <input type="number" name="phone"><br><br>
+    Designation <input type="text" name="desig"><br><br>
+    <input type="submit">
+</form>
+
+
+<br><br>
+<hr><br><br>
+
+
+<table border="2">
+
+    <th>ID</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Designation</th>
+    <th>Action</th>
+    <th>Edit</th>
+
+    <% a.forEach(function(n){ %>
+        <tr>
+
+            <td>
+                <%= n.id %>
+            </td>
+            <td>
+                <%= n.name %>
+            </td>
+            <td>
+                <%= n.address %>
+            </td>
+            <td>
+                <%= n.phone %>
+            </td>
+            <td>
+                <%= n.designation %>
+            </td>
+            <td>
+                <a href="/deleteData/<%= n.id %>">Delete</a>
+                
+            </td>
+            <td>
+                <a href="/editData/<%= n.id %>">Edit</a>
+            </td>
+        </tr>
+    <% }); %>
+</table>
